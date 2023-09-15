@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "example01" {
   #acl    = "private"
 
   tags = {
-    name        = var.name[0]
+    name        = var.name[count.index]
     environment = var.environment[0]
     purpose = var.purpose[0]
     owner = var.owner[0]
